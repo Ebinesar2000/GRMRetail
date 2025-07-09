@@ -1,0 +1,237 @@
+Create a React app named GroupRM-booking-retail. 
+This page should render all the components listed below, structured and styled based on Ant Design's design system. 
+Each component should render dynamically based on data passed via props or defined in local JSON objects. 
+Components should be modular and reusable.
+
+Components to Implement:
+A. Header Component (<Header />)
+Build a reusable Header component that includes:
+	Logo (rendered dynamically from JSON)
+
+Navigation menu with items:
+	Home, Dashboard, Manage Booking, New Booking, Payments, Bids, Settings
+	Navigation should simulate routing (or use react-router-dom if required)
+	Notification Bell (AntD Badge + BellOutlined)
+	User Avatar with user name (e.g., “John Smith” using AntD Avatar)
+
+B. Top Banner Component (<TopBanner />)
+Create a component that:
+	Dynamically displays a marquee or sliding announcement text (e.g., latest deals or notices)
+	A button on the right (e.g., “Explore Now”) that triggers a navigation or action
+
+C. Request Form Component (<RequestForm />)
+	Build a travel request form with three booking types:
+	Radio Buttons for Trip Type: One way (default), Round trip, Multi city
+	Shared fields for all types:
+	Origin & Destination: Select dropdowns (city + airport code)
+	Departure Date & Return Date: AntD DatePicker
+	Passengers:
+		Adults (InputNumber)
+		Kids (2–11 yrs)
+		Infants (0–2 yrs)
+
+	Cabin Type: Select dropdown (e.g., Economy, Business)
+
+	Additional Behavior:
+		If return date is entered in One Way mode, auto-switch to Round Trip
+
+	Multi-city logic:
+		Support adding multiple city pairs dynamically
+		Minimum 2 city pairs before showing "Remove" button
+		Include a "Get Fare" button to submit the form
+
+D. DealCard Component (<DealCard />)
+	Build a reusable <DealCard /> using Ant Design Card components:
+	Render dynamically from an array of deal JSON objects
+Each card includes:
+	Top badge (e.g., “Flash Sale: NYC to Vegas” + “Limited Time” tag)
+	% Discount
+	Route (from → to with flight icon)
+	Original price (struck-through), Discounted price
+	Group size and Available seats
+	Departure window and stay duration
+	Feature list (✅ icons)
+	Book-by and valid-until dates
+	Buttons: “View Details” and “Book Now”
+	Example Deal JSON:
+	{
+	  "title": "Flash Sale: NYC to Vegas",
+	  "discount": 34,
+	  "from": "New York",
+	  "to": "Las Vegas",
+	  "originalPrice": 450,
+	  "price": 299,
+	  "rating": 4.8,
+	  "groupSize": "15-50 pax",
+	  "availableSeats": 45,
+	  "departureWindow": "Jan 15 - Mar 30, 2025",
+	  "stayDuration": "3-7 days",
+	  "features": ["Free seat selection", "Priority boarding", "Complimentary snacks"],
+	  "bookBy": "Dec 15",
+	  "validUntil": "Dec 31, 2024"
+	}
+E. Marketplace Component (<Marketplace />)
+Create a travel packages section:
+
+	1. Header Section
+	Title: "Your Marketplace"
+	Subtitle: "Discover exclusive travel packages and deals"
+
+	2. MarketplaceFilter (child component)
+	Render a dynamic form using the following config:
+
+	const marketplaceFilterConfig = [
+	  { name: "destination", label: "Destination", type: "input", placeholder: "Where to?" },
+	  { name: "travelDate", label: "Travel Date", type: "datePicker" },
+	  { name: "passengers", label: "Passengers", type: "inputNumber", placeholder: "How many?" },
+	  { name: "packageType", label: "Package Type", type: "select", options: ["All packages", "Luxury", "Adventure", "Family", "Business"] }
+	];
+	Add AntD Form, Input, Select, DatePicker, and InputNumber
+	Buttons: Search Packages (Primary), Reset Filters (Default)
+
+3. Travel Packages Grid
+Child component <PackageCard /> includes:
+
+	Image
+	Route (from → to)
+	Title
+	Discounted + original price
+	Feature list (bullets)
+	Validity (e.g., “Valid until Dec 31, 2023”)
+	CTA: “Book now”
+	
+4. Dynamic Rendering
+Render cards from JSON like:
+	const travelPackages = [
+	  {
+	    id: 1,
+	    image: "https://...",
+	    from: "New York",
+	    to: "London",
+	    title: "Executive Business Package",
+	    price: "$1299",
+	    originalPrice: "$1599",
+	    features: ["Round-trip flights", "7 nights beachfront resort", "Spa treatments included"],
+	    validUntil: "Dec 31, 2023"
+	  }
+	];
+	Use Row and Col for layout.
+
+F. RecentBookings Component (<RecentBookings />)
+
+Create a recent bookings section with:
+
+	Title: Recent Bookings
+	Subtitle: Your latest group travel bookings
+	Each card should include:
+	Booking ID (e.g., GR-2024-001)
+	Status Tag (Confirmed = green, Cancelled = red, Pending = yellow)
+	Type tag (e.g., Corporate)
+	Route: From → To
+	Departure Date
+	Passenger count
+	CTA Button: Manage booking
+	Booking JSON Example:
+	[
+	  {
+	    "id": "GR-2024-001",
+	    "status": "Confirmed",
+	    "type": "Corporate",
+	    "from": "New York",
+	    "to": "Las Vegas",
+	    "departureDate": "2024-01-15",
+	    "passengers": 25
+	  }
+	]
+	Use Card, Tag, Typography, and Button from Ant Design. Layout using Row and Col.
+
+Folder Strucure:
+
+Use below folder structure to create components and pages and layout
+
+public
+|___locales
+|    |___en-us
+|      |___translation.json
+|    |___hi-In
+|      |___translation.json
+src
+│
+├── assets/
+│   └── images/                         # Static assets (logos, icons, banners, etc.)
+│
+├── components/
+│
+│   ├── Header/
+│   │   ├── Header.tsx
+│   │   ├── Header.scss                 # SCSS for Header
+│   │   └── Header.types.ts
+│
+│   ├── TopBanner/
+│   │   ├── TopBanner.tsx
+│   │   └── TopBanner.scss
+│
+│   ├── RequestForm/
+│   │   ├── RequestForm.tsx
+│   │   ├── TripSegment.tsx            # Used in Multi-city input
+│   │   ├── RequestForm.types.ts
+│   │   └── RequestForm.scss
+│
+│   ├── DealCard/
+│   │   ├── DealCard.tsx
+│   │   ├── DealCard.types.ts
+│   │   └── DealCard.scss
+│
+│   ├── Marketplace/
+│   │   ├── Marketplace.tsx
+│   │   ├── MarketplaceFilter.tsx
+│   │   ├── PackageCard.tsx
+│   │   ├── Marketplace.types.ts
+│   │   └── Marketplace.scss
+│
+│   └── RecentBookings/
+│       ├── RecentBookings.tsx
+│       ├── RecentBookings.types.ts
+│       └── RecentBookings.scss
+│
+├── pages/
+│   └── LandingPage.tsx
+│   └── LandingPage.scss
+│
+├── config/
+│   ├── navConfig.ts                   # Header menu configuration
+│   └── filterOptions.ts               # Dropdown options
+│
+├── routes/
+│   └── AppRoutes.tsx
+│
+├── hooks/
+│   └── usePackages.ts
+│
+├── services/
+│   ├── deals.service.ts
+│   └── bookings.service.ts
+│
+├── stores/
+│   └── packageStore.ts                # Redux/Zustand store (if any)
+│
+├── utils/
+│   └── formatter.ts                   # Utilities for formatting price/date etc.
+│
+└── styles/
+    ├── variables.scss                 # Theme colors, mixins, breakpoints
+    └── global.scss                    # Reset, base typography, layout helpers
+
+General Guidelines:
+All components must use Ant Design
+Use Row, Col, Card, Form, Input, DatePicker, Select, Tag, Button, and Avatar as needed
+Keep layout responsive
+Use local state or props for dynamic rendering
+Organize components in separate files for modularity
+Create a component called accesiblity and show the default,dark,black and white,yellow and black,black and yellow buttons
+Create a theme.json it should be in the format of ant theme...default,dark,black and white,yellow and black,black and yellow 
+place this accesiblity in header
+Add the react translation in all the components eg:
+	import { useTranslation } from "react-i18next";
+    	const { t } = useTranslation();
+	{t("failure")}

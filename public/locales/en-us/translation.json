@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "manage_booking": "Manage Booking",
+    "new_booking": "New Booking",
+    "payments": "Payments",
+    "bids": "Bids",
+    "settings": "Settings"
+  },
+  "banner": {
+    "announcement": "🎉 Limited Time Offer: Save up to 40% on group bookings! Book before December 31st for exclusive deals.",
+    "cta": "Explore Now"
+  },
+  "booking": {
+    "title": "Quick Booking",
+    "subtitle": "Get started with your group travel booking",
+    "one_way": "One way",
+    "round_trip": "Round trip",
+    "multi_city": "Multi city",
+    "origin": "Origin",
+    "destination": "Destination",
+    "departure_date": "Departure date",
+    "return_date": "Return date",
+    "passengers": "Passengers",
+    "adults": "Adults (12+ years)",
+    "kids": "Kids (2-11 years)",
+    "infants": "Infants (0-2 years)",
+    "cabin": "Cabin",
+    "economy": "Economy",
+    "business": "Business",
+    "first": "First Class",
+    "get_fares": "Get Fares",
+    "origin_placeholder": "Select departure city",
+    "destination_placeholder": "Select destination"
+  },
+  "deals": {
+    "title": "Hot Deals & Offers",
+    "subtitle": "Exclusive deals today with our popular routes",
+    "group_size": "Group Size",
+    "available": "Available",
+    "departure_window": "Departure Window",
+    "stay_duration": "Stay Duration",
+    "included_features": "Included Features:",
+    "book_by": "Book by:",
+    "valid_until": "Valid until:",
+    "view_details": "View Details",
+    "book_now": "Book Now"
+  },
+  "marketplace": {
+    "title": "Your Marketplace",
+    "subtitle": "Discover exclusive travel packages and deals",
+    "search_packages": "Search Travel Packages",
+    "destination": "Destination",
+    "travel_date": "Travel Date",
+    "passengers": "Passengers",
+    "package_type": "Package Type",
+    "all_packages": "All packages",
+    "luxury": "Luxury",
+    "adventure": "Adventure",
+    "family": "Family",
+    "business": "Business",
+    "search_packages_btn": "Search Packages",
+    "reset_filters": "Reset Filters",
+    "book_now": "Book now",
+    "valid_until": "Valid until:"
+  },
+  "bookings": {
+    "title": "Recent Bookings",
+    "subtitle": "Your latest group travel bookings",
+    "route": "Route:",
+    "departure": "Date:",
+    "passengers": "Pax:",
+    "manage": "Manage booking"
+  },
+  "accessibility": {
+    "title": "Accessibility Options",
+    "default": "Default Theme",
+    "dark": "Dark Theme",
+    "high_contrast": "High Contrast",
+    "yellow_black": "Yellow on Black",
+    "black_yellow": "Black on Yellow"
+  },
+  "failure": "Operation failed"
+}

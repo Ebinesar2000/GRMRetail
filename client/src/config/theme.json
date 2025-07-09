@@ -1,0 +1,46 @@
+{
+  "default": {
+    "token": {
+      "colorPrimary": "#1890ff",
+      "colorBgBase": "#ffffff",
+      "colorTextBase": "#000000",
+      "borderRadius": 8
+    }
+  },
+  "dark": {
+    "algorithm": "darkAlgorithm",
+    "token": {
+      "colorPrimary": "#1890ff",
+      "colorBgBase": "#141414",
+      "colorTextBase": "#ffffff",
+      "borderRadius": 8
+    }
+  },
+  "high-contrast": {
+    "token": {
+      "colorPrimary": "#ffffff",
+      "colorBgBase": "#000000",
+      "colorTextBase": "#ffffff",
+      "colorBorder": "#ffffff",
+      "borderRadius": 8
+    }
+  },
+  "yellow-black": {
+    "token": {
+      "colorPrimary": "#000000",
+      "colorBgBase": "#ffff00",
+      "colorTextBase": "#000000",
+      "colorBorder": "#000000",
+      "borderRadius": 8
+    }
+  },
+  "black-yellow": {
+    "token": {
+      "colorPrimary": "#ffff00",
+      "colorBgBase": "#000000",
+      "colorTextBase": "#ffff00",
+      "colorBorder": "#ffff00",
+      "borderRadius": 8
+    }
+  }
+}
